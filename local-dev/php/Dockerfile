@@ -6,7 +6,8 @@ RUN mv composer.phar /usr/local/bin/composer
 # 安装 常用工具
 RUN apt-get update && apt-get install -y git vim zip unzip
 # 安装 Laravel 依赖之依赖
-RUN apt-get update && apt-get install -y libonig-dev libxml2-dev
+RUN apt-get update && apt-get install -y libonig-dev libxml2-dev libpng-dev 
+RUN docker-php-ext-install gd
 # 安装 Laravel 依赖
 RUN docker-php-ext-install bcmath ctype json mbstring
 RUN apt-get update && apt-get install -y openssl
